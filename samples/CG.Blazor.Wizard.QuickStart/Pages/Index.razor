@@ -1,0 +1,350 @@
+﻿@page "/"
+@inject ISnackbar Snackbar;
+
+<MudText Typo="Typo.h4" Class="mt-2 ml-4">Wizard Quick Start</MudText>
+<MudText Typo="Typo.body1" Class="ml-4">This page demonstrates the CodeGator Wizard component</MudText>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="pt-5">
+    <MuddyWizard @ref="_wiz"
+               IndexChanged="OnIndexChanged"
+               WizardCancelled="OnWizardCancelled"
+               WizardFinished="OnWizardFinished">
+        <MuddyWizardPanel Title="First Step" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt">
+            <p>This is the body of the first step. </p>
+        </MuddyWizardPanel>
+        <MuddyWizardPanel Title="Second Step" Description="Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis">
+            <p>This is the body of the second step.</p>
+        </MuddyWizardPanel>
+        <MuddyWizardPanel Title="Third Step" Description="Duis aute irure dolor in reprehenderit in voluptate velit esse">
+            <p>The is the body of the third step.</p>
+        </MuddyWizardPanel>
+        <MuddyWizardPanel Title="Fourth Step" Description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui">
+            <p>The is the body of the fourth step.</p>
+        </MuddyWizardPanel>
+    </MuddyWizard>
+</MudContainer>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-10" Style="background-color: lightslategrey">
+    <MudGrid Style="margin 0px; padding: 0px" Spacing=1>
+        <MudItem xs="6">
+            <MudCard Outlined>
+                <MudCardHeader Style="padding: 0px;">
+                    <MudText Typo="Typo.caption">Wizard Header</MudText>
+		        </MudCardHeader>
+                <MudCardContent>
+                    <MudGrid>
+                        <MudItem xs=12>
+                             <MudSwitch Label="Show Header Chips" 
+                                       @bind-Checked="@_wiz.ShowChips" 
+                                       Color="@(_wiz.ShowChips ? Color.Primary: Color.Default)" />
+				        </MudItem>
+                        <MudItem xs="6">
+                            <MudSelect Variant="Variant.Outlined" 
+                                       Label="Header Non-Selected Chip Color" 
+                                       Dense="true" 
+                                       Margin="Margin.Dense" 
+                                       T="@Color" 
+                                       Disabled="@(!_wiz.ShowChips)"
+                                       @bind-Value="_wiz.HeaderChipColor">
+                                <MudSelectItem T="Color" Value="@Color.Dark">Dark</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Default">Default</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Primary">Primary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Secondary">Secondary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Tertiary">Tertiary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Info">Info</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Success">Success</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Warning">Warning</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Error">Error</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Transparent">Transparent</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Inherit">Inherit</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Surface">Surface</MudSelectItem>
+                            </MudSelect>
+                            <MudSelect Variant="Variant.Outlined" 
+                                        Label="Header Title Color" 
+                                        Dense="true" 
+                                        Margin="Margin.Dense" 
+                                        T="@Color" 
+                                        Disabled="@(_wiz.ShowChips)"
+                                        @bind-Value="_wiz.TitleColor">
+                                <MudSelectItem T="Color" Value="@Color.Dark">Dark</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Default">Default</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Primary">Primary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Secondary">Secondary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Tertiary">Tertiary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Info">Info</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Success">Success</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Warning">Warning</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Error">Error</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Transparent">Transparent</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Inherit">Inherit</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Surface">Surface</MudSelectItem>
+                            </MudSelect>
+                            <MudSelect Variant="Variant.Outlined" 
+                                        Label="Header Title Typo" 
+                                        Dense="true" 
+                                        Margin="Margin.Dense" 
+                                        T="@Typo" 
+                                        Disabled="@(_wiz.ShowChips)"
+                                        @bind-Value="_wiz.TitleTypo">
+                                <MudSelectItem T="Typo" Value="@Typo.inherit">Inherit</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h1">H1</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h2">H2</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h3">H3</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h4">H4</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h5">H5</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h6">H6</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.subtitle1">Subtitle1</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.subtitle2">Subtitle2</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.body1">body1</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.body2">body2</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.button">button</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.caption">caption</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.overline">overline</MudSelectItem>
+                            </MudSelect>
+                            <MudSelect Variant="Variant.Outlined" 
+                                        Label="Header Description Typo" 
+                                        Dense="true" 
+                                        Margin="Margin.Dense" 
+                                        T="@Typo" 
+                                        @bind-Value="_wiz.DescriptionTypo">
+                                <MudSelectItem T="Typo" Value="@Typo.inherit">Inherit</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h1">H1</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h2">H2</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h3">H3</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h4">H4</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h5">H5</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.h6">H6</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.subtitle1">Subtitle1</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.subtitle2">Subtitle2</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.body1">body1</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.body2">body2</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.button">button</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.caption">caption</MudSelectItem>
+                                <MudSelectItem T="Typo" Value="@Typo.overline">overline</MudSelectItem>
+                            </MudSelect>                            
+				        </MudItem>
+                        <MudItem xs="6">
+                            <MudSelect Variant="Variant.Outlined" 
+                                Label="Header Chip Variant" 
+                                Dense="true" 
+                                Margin="Margin.Dense" 
+                                T="@Variant" 
+                                Disabled="@(!_wiz.ShowChips)"
+                                @bind-Value="_wiz.HeaderChipVariant">
+                                <MudSelectItem T="Variant" Value="@Variant.Outlined">Outlined</MudSelectItem>
+                                <MudSelectItem T="Variant" Value="@Variant.Filled">Filled</MudSelectItem>
+                                <MudSelectItem T="Variant" Value="@Variant.Text">Text</MudSelectItem>
+                            </MudSelect>
+                            <MudSelect Variant="Variant.Outlined" 
+                                        Label="Header Selected Chip Color" 
+                                        Dense="true" 
+                                        Margin="Margin.Dense" 
+                                        T="@Color" 
+                                        Disabled="@(!_wiz.ShowChips)"
+                                        @bind-Value="_wiz.HeaderChipSelectedColor">
+                                <MudSelectItem T="Color" Value="@Color.Dark">Dark</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Default">Default</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Primary">Primary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Secondary">Secondary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Tertiary">Tertiary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Info">Info</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Success">Success</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Warning">Warning</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Error">Error</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Transparent">Transparent</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Inherit">Inherit</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Surface">Surface</MudSelectItem>
+                            </MudSelect>
+                            
+                            <MudSelect Variant="Variant.Outlined" 
+                                        Label="Header Description Color" 
+                                        Dense="true" 
+                                        Margin="Margin.Dense" 
+                                        T="@Color" 
+                                        @bind-Value="_wiz.DescriptionColor">
+                                <MudSelectItem T="Color" Value="@Color.Dark">Dark</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Default">Default</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Primary">Primary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Secondary">Secondary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Tertiary">Tertiary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Info">Info</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Success">Success</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Warning">Warning</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Error">Error</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Transparent">Transparent</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Inherit">Inherit</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Surface">Surface</MudSelectItem>
+                            </MudSelect>
+				        </MudItem>
+			        </MudGrid>
+                </MudCardContent>
+	        </MudCard>        
+		</MudItem>
+        <MudItem xs="6">
+            <MudCard Outlined>
+                <MudCardHeader Style="padding: 0px;">
+                    <MudText Typo="Typo.caption">Wizard Buttons</MudText>
+	            </MudCardHeader>
+                <MudCardContent>
+                    <MudGrid>
+                        <MudItem xs="6">
+                            <MudSwitch Label="Show Cancel" 
+                                        @bind-Checked="@_wiz.ShowCancel" 
+                                        Color="@(_wiz.ShowCancel ? Color.Primary: Color.Default)" />
+                            <MudSelect Variant="Variant.Outlined" 
+                                        Label="Previous Color" 
+                                        Dense="true" 
+                                        Margin="Margin.Dense" 
+                                        T="@Color" 
+                                        @bind-Value="_wiz.PreviousColor">
+                                <MudSelectItem T="Color" Value="@Color.Dark">Dark</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Default">Default</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Primary">Primary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Secondary">Secondary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Tertiary">Tertiary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Info">Info</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Success">Success</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Warning">Warning</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Error">Error</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Transparent">Transparent</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Inherit">Inherit</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Surface">Surface</MudSelectItem>
+                            </MudSelect>
+                            <MudSelect Variant="Variant.Outlined" 
+                                        Label="Button Variant" 
+                                        Dense="true" 
+                                        Margin="Margin.Dense" 
+                                        T="@Variant" 
+                                        @bind-Value="_wiz.ButtonVariant">
+                                <MudSelectItem T="Variant" Value="@Variant.Outlined">Outlined</MudSelectItem>
+                                <MudSelectItem T="Variant" Value="@Variant.Filled">Filled</MudSelectItem>
+                                <MudSelectItem T="Variant" Value="@Variant.Text">Text</MudSelectItem>
+                            </MudSelect>
+                            <MudSelect Variant="Variant.Outlined" 
+                                        Label="Cancel Color" 
+                                        Dense="true" 
+                                        Margin="Margin.Dense" 
+                                        T="@Color" 
+                                        @bind-Value="_wiz.CancelColor">
+                                <MudSelectItem T="Color" Value="@Color.Dark">Dark</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Default">Default</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Primary">Primary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Secondary">Secondary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Tertiary">Tertiary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Info">Info</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Success">Success</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Warning">Warning</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Error">Error</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Transparent">Transparent</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Inherit">Inherit</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Surface">Surface</MudSelectItem>
+                            </MudSelect>
+
+			            </MudItem>
+                        <MudItem xs="6">
+                            <MudSwitch Label="Show Finish" 
+                                        @bind-Checked="@_wiz.ShowFinish" 
+                                        Color="@(_wiz.ShowFinish ? Color.Primary: Color.Default)" />
+                            <MudSelect Variant="Variant.Outlined" 
+                                        Label="Next Color" 
+                                        Dense="true" 
+                                        Margin="Margin.Dense" 
+                                        T="@Color" 
+                                        @bind-Value="_wiz.NextColor">
+                                <MudSelectItem T="Color" Value="@Color.Dark">Dark</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Default">Default</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Primary">Primary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Secondary">Secondary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Tertiary">Tertiary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Info">Info</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Success">Success</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Warning">Warning</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Error">Error</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Transparent">Transparent</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Inherit">Inherit</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Surface">Surface</MudSelectItem>
+                            </MudSelect>
+                            <MudSelect Variant="Variant.Outlined" 
+                                        Label="Finish Color" 
+                                        Dense="true" 
+                                        Margin="Margin.Dense" 
+                                        T="@Color" 
+                                        @bind-Value="_wiz.FinishColor">
+                                <MudSelectItem T="Color" Value="@Color.Dark">Dark</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Default">Default</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Primary">Primary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Secondary">Secondary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Tertiary">Tertiary</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Info">Info</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Success">Success</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Warning">Warning</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Error">Error</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Transparent">Transparent</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Inherit">Inherit</MudSelectItem>
+                                <MudSelectItem T="Color" Value="@Color.Surface">Surface</MudSelectItem>
+                            </MudSelect>
+
+			            </MudItem>
+		            </MudGrid>
+	            </MudCardContent>
+            </MudCard>  
+		</MudItem>
+        <MudItem xs="6">
+            <MudCard Outlined>
+                <MudCardHeader Style="padding: 0px;">
+                    <MudText Typo="Typo.caption">MudBlazor Properties</MudText>
+	            </MudCardHeader>
+                <MudCardContent>
+                    <MudGrid>
+                        <MudItem xs="6">
+                            <MudSwitch Label="Square"
+                                        @bind-Checked="@_wiz.Square" 
+                                        Color="@(_wiz.Square ? Color.Primary: Color.Default)" />
+			            </MudItem>
+                        <MudItem xs="6">
+                            <MudSwitch Label="Outlined" 
+                                       @bind-Checked="@_wiz.Outlined" 
+                                       Color="@(_wiz.Outlined ? Color.Primary: Color.Default)" />
+			            </MudItem>
+                        <MudItem xs="12">
+                            <MudSlider T="int" @bind-Value="@_wiz.Elevation" Max=20 Min=1>
+                                Elevation
+                            </MudSlider>
+                        </MudItem>
+		            </MudGrid>
+	            </MudCardContent>
+            </MudCard>
+		</MudItem>
+	</MudGrid>
+</MudContainer>
+
+@code {
+    MuddyWizard _wiz;
+
+    void OnIndexChanged(IndexChangedEventArgs e)
+    {
+        Snackbar.Add(
+            $"IndexChanged event raised @ '{DateTime.Now}'",
+            Severity.Normal,
+            options => options.VisibleStateDuration = 3000
+            );
+    }
+
+    void OnWizardCancelled()
+    {
+        Snackbar.Add(
+            $"WizardCancelled event raised @ '{DateTime.Now}'",
+            Severity.Warning,
+            options => options.VisibleStateDuration = 3000
+            );
+    }
+
+    void OnWizardFinished()
+    {
+        Snackbar.Add(
+            $"WizardFinished event raised @ '{DateTime.Now}'",
+            Severity.Success,
+            options => options.VisibleStateDuration = 3000
+            );
+    }
+}

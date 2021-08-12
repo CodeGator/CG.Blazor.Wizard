@@ -1,0 +1,100 @@
+﻿using Microsoft.AspNetCore.Components;
+using MudBlazor;
+using System;
+using System.Threading.Tasks;
+
+namespace CG.Blazor.Wizard
+{
+    /// <summary>
+    /// This class is the code-behind for the <see cref="MuddyWizardPanel"/> 
+    /// razor component.
+    /// </summary>
+    public partial class MuddyWizardPanel : MudComponentBase, IAsyncDisposable
+    {
+        // *******************************************************************
+        // Fields.
+        // *******************************************************************
+
+        #region Fields
+
+        /// <summary>
+        /// This field indicate whether the component has been disposed.
+        /// </summary>
+        private bool _disposed;
+
+        #endregion
+
+        // *******************************************************************
+        // Properties.
+        // *******************************************************************
+
+        #region Properties
+
+        /// <summary>
+        /// This property contains the parent of the component.
+        /// </summary>
+        [CascadingParameter]
+        protected internal MuddyWizard Parent { get; set; }
+
+        /// <summary>
+        /// This property contains the child content for the component.
+        /// </summary>
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
+
+        /// <summary>
+        /// This property contains the title for the component.
+        /// </summary>
+        [Parameter]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// This property contains the description for the component.
+        /// </summary>
+        [Parameter]
+        public string Description { get; set; }
+
+        #endregion
+
+        // *******************************************************************
+        // Protected methods.
+        // *******************************************************************
+
+        #region Protected methods
+
+        /// <summary>
+        /// This method is called to initialize the component.
+        /// </summary>
+        protected override void OnInitialized()
+        {
+            // Add ourselves to the parent wizard.
+            Parent.AddPanel(this);
+
+            // Give the base class a chance.
+            base.OnInitialized();
+        }
+
+        // *******************************************************************
+
+        /// <summary>
+        /// This method is called to dispose of the component.
+        /// </summary>
+        /// <returns>A <see cref="ValueTask"/> for the operation.</returns>
+        public async ValueTask DisposeAsync()
+        {
+            // Have we already been disposed?
+            if (_disposed == true) 
+            { 
+                return; // Nothing to do.
+            }
+
+            // Mark that we've been disposed.
+            _disposed = true;
+            
+            // Cleanup our reference in the parent wizard.
+            await Parent?.RemovePanel(this);
+        }
+
+        #endregion
+    }
+}
