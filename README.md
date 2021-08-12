@@ -1,10 +1,10 @@
 # CG.CG.Blazor.Wizard: 
 
 ---
-[![Build Status](https://dev.azure.com/codegator/CG.CG.Blazor.Wizard/_apis/build/status/CodeGator.CG.CG.Blazor.Wizard?branchName=main)](https://dev.azure.com/codegator/CG.CG.Blazor.Wizard/_build/latest?definitionId=58&branchName=main)
+[![Build Status](https://dev.azure.com/codegator/CG.Blazor.Wizard/_apis/build/status/CodeGator.CG.Blazor.Wizard?branchName=main)](https://dev.azure.com/codegator/CG.Blazor.Wizard/_build/latest?definitionId=73&branchName=main)
 [![Github docs](https://img.shields.io/static/v1?label=Documentation&message=online&color=blue)](https://codegator.github.io/CG.CG.Blazor.Wizard/index.html)
 [![NuGet downloads](https://img.shields.io/nuget/dt/CG.CG.Blazor.Wizard.svg?style=flat)](https://nuget.org/packages/CG.CG.Blazor.Wizard)
-![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/codegator/CG.CG.Blazor.Wizard/58)
+![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/codegator/CG.CG.Blazor.Wizard/73)
 [![Github discussion](https://img.shields.io/badge/Discussion-online-blue)](https://github.com/CodeGator/CG.CG.Blazor.Wizard/discussions)
 [![CG.CG.Blazor.Wizard on fuget.org](https://www.fuget.org/packages/CG.CG.Blazor.Wizard/badge.svg)](https://www.fuget.org/packages/CG.CG.Blazor.Wizard)
 
