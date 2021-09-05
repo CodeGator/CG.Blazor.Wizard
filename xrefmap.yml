@@ -149,6 +149,19 @@ references:
   isSpec: "True"
   fullName: CG.Blazor.Wizard.MuddyWizard.DescriptionTypo
   nameWithType: MuddyWizard.DescriptionTypo
+- uid: CG.Blazor.Wizard.MuddyWizard.DisableNext
+  name: DisableNext
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_DisableNext
+  commentId: P:CG.Blazor.Wizard.MuddyWizard.DisableNext
+  fullName: CG.Blazor.Wizard.MuddyWizard.DisableNext
+  nameWithType: MuddyWizard.DisableNext
+- uid: CG.Blazor.Wizard.MuddyWizard.DisableNext*
+  name: DisableNext
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_DisableNext_
+  commentId: Overload:CG.Blazor.Wizard.MuddyWizard.DisableNext
+  isSpec: "True"
+  fullName: CG.Blazor.Wizard.MuddyWizard.DisableNext
+  nameWithType: MuddyWizard.DisableNext
 - uid: CG.Blazor.Wizard.MuddyWizard.DisposeAsync
   name: DisposeAsync()
   href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_DisposeAsync
