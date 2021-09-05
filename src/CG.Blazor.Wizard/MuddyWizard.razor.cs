@@ -98,6 +98,12 @@ namespace CG.Blazor.Wizard
         public Typo DescriptionTypo { get; set; }
 
         /// <summary>
+        /// This property indicates whether the next button should be disabled, or not. 
+        /// </summary>
+        [Parameter]
+        public bool DisableNext { get; set; }
+
+        /// <summary>
         /// This property contains the elevation for the component.
         /// </summary>
         [Parameter]
@@ -137,14 +143,14 @@ namespace CG.Blazor.Wizard
         /// This property indicates whether the next button should be
         /// disabled, or not. True if it should be disabled; False otherwise.
         /// </summary>
-        protected bool IsNextDisabled =>
-            !SelectedIndex.HasValue || SelectedIndex >= _panels.Count - 1;
+        protected bool IsNextDisabled => DisableNext || 
+            (!SelectedIndex.HasValue || SelectedIndex >= _panels.Count - 1);
 
         /// <summary>
         /// This property indicates whether the finish button should be
         /// hidden, or not. True if it should be hidden; False otherwise.
         /// </summary>
-        protected bool IsFinishVisible =>
+        protected bool IsFinishVisible => 
             ShowFinish && (!SelectedIndex.HasValue || SelectedIndex >= _panels.Count - 1);
 
         /// <summary>
@@ -232,6 +238,7 @@ namespace CG.Blazor.Wizard
             CancelColor = Color.Default;
             DescriptionColor = Color.Default;
             DescriptionTypo = Typo.caption;
+            DisableNext = false;
             Elevation = 1;
             FinishColor = Color.Default;
             HeaderChipColor = Color.Default;
@@ -460,11 +467,12 @@ namespace CG.Blazor.Wizard
             // Mark that we've been disposed.
             _disposed = true;
 
-           // TOOD : write the code for this.
+            // TOOD : write the code for this.
+
+            // Prevent derived types from having the implement IDisposable.
+            GC.SuppressFinalize(this);
         }
 
         #endregion
     }
 }
-
-

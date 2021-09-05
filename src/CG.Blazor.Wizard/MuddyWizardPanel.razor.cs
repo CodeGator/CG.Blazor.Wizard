@@ -93,6 +93,9 @@ namespace CG.Blazor.Wizard
             
             // Cleanup our reference in the parent wizard.
             await Parent?.RemovePanel(this);
+
+            // Prevent derived types from having the implement IDisposable.
+            GC.SuppressFinalize(this);
         }
 
         #endregion

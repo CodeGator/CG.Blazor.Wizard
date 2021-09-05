@@ -6,20 +6,25 @@
 
 <MudContainer MaxWidth="MaxWidth.Medium" Class="pt-5">
     <MuddyWizard @ref="_wiz"
+               DisableNext="NextDisabled"
                IndexChanged="OnIndexChanged"
                WizardCancelled="OnWizardCancelled"
                WizardFinished="OnWizardFinished">
         <MuddyWizardPanel Title="First Step" Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt">
             <p>This is the body of the first step. </p>
+            <MudSwitch T="bool" @bind-Checked="NextDisabled" Label="Disable Next Button"></MudSwitch>
         </MuddyWizardPanel>
         <MuddyWizardPanel Title="Second Step" Description="Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis">
             <p>This is the body of the second step.</p>
+            <MudSwitch T="bool" @bind-Checked="NextDisabled" Label="Disable Next Button"></MudSwitch>
         </MuddyWizardPanel>
         <MuddyWizardPanel Title="Third Step" Description="Duis aute irure dolor in reprehenderit in voluptate velit esse">
             <p>The is the body of the third step.</p>
+            <MudSwitch T="bool" @bind-Checked="NextDisabled" Label="Disable Next Button"></MudSwitch>
         </MuddyWizardPanel>
         <MuddyWizardPanel Title="Fourth Step" Description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui">
             <p>The is the body of the fourth step.</p>
+            <MudSwitch T="bool" @bind-Checked="NextDisabled" Label="Disable Next Button"></MudSwitch>
         </MuddyWizardPanel>
     </MuddyWizard>
 </MudContainer>
@@ -320,6 +325,7 @@
 
 @code {
     MuddyWizard _wiz;
+    bool NextDisabled { get; set; }
 
     void OnIndexChanged(IndexChangedEventArgs e)
     {
