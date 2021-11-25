@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -10,9 +10,9 @@
     <Description>This package contains a MudBlazor based Wizard component used by other CodeGator packages.
 
 Platforms supported:
-    .NET 5.x or above</Description>
+    .NET 6.x or above</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>Copyright © 2020 - 2021 by CodeGator. All rights reserved.</Copyright>
+    <Copyright>Copyright © 2020 - 2022 by CodeGator. All rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/CodeGator/CG.Blazor.Wizard</PackageProjectUrl>
     <RepositoryUrl>https://github.com/CodeGator/CG.Blazor.Wizard</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
@@ -24,7 +24,7 @@ Platforms supported:
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net5.0\CG.Blazor.Wizard.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net6.0\CG.Blazor.Wizard.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -43,8 +43,8 @@ Platforms supported:
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MudBlazor" Version="5.1.4" />
-    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.231">
+    <PackageReference Include="MudBlazor" Version="6.0.2" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.244">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
