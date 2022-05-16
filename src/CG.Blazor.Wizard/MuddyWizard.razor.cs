@@ -67,11 +67,13 @@ namespace CG.Blazor.Wizard
         /// <summary>
         /// This property contains the variant for the wizard buttons.
         /// </summary>
+        [Parameter]
         public Variant ButtonVariant { get; set; }
 
         /// <summary>
         /// This property contains the color for the cancel button.
         /// </summary>
+        [Parameter]
         public Color CancelColor { get; set; }
 
         /// <summary>
@@ -90,11 +92,13 @@ namespace CG.Blazor.Wizard
         /// <summary>
         /// This property contains the color for the wizard descriptions.
         /// </summary>
+        [Parameter]
         public Color DescriptionColor { get; set; }
 
         /// <summary>
         /// This property contains the typography for the wizard descriptions.
         /// </summary>
+        [Parameter]
         public Typo DescriptionTypo { get; set; }
 
         /// <summary>
@@ -112,18 +116,21 @@ namespace CG.Blazor.Wizard
         /// <summary>
         /// This property contains the color for the finish button.
         /// </summary>
+        [Parameter]
         public Color FinishColor { get; set; }
 
         /// <summary>
         /// This property contains the color for non-selected chips in the 
         /// wizard header.
         /// </summary>
+        [Parameter]
         public Color HeaderChipColor { get; set; }
 
         /// <summary>
         /// This property contains the color for selected chip in the 
         /// wizard header.
         /// </summary>
+        [Parameter]
         public Color HeaderChipSelectedColor { get; set; }
 
         /// <summary>
@@ -156,17 +163,20 @@ namespace CG.Blazor.Wizard
         /// <summary>
         /// This property contains the color for the next button.
         /// </summary>
+        [Parameter]
         public Color NextColor { get; set; }
 
         /// <summary>
         /// This property indicates whether the wizard should be outlined, 
         /// or not. True to outline; False otherwise.
         /// </summary>
+        [Parameter]
         public bool Outlined { get; set; }
 
         /// <summary>
         /// This property contains the color for the previous button.
         /// </summary>
+        [Parameter]
         public Color PreviousColor { get; set; }
 
         /// <summary>
@@ -189,16 +199,19 @@ namespace CG.Blazor.Wizard
         /// <summary>
         /// This property indicates whether to show the cancel button, or not.
         /// </summary>
+        [Parameter]
         public bool ShowCancel { get; set; }
 
         /// <summary>
         /// This property indicates whether to show the header chips, or not.
         /// </summary>
+        [Parameter]
         public bool ShowChips { get; set; }
 
         /// <summary>
         /// This property indicates whether to show the finish button, or not.
         /// </summary>
+        [Parameter]
         public bool ShowFinish { get; set; }
 
         /// <summary>
@@ -206,16 +219,19 @@ namespace CG.Blazor.Wizard
         /// to zero, or not. True to set the border radius to zero; False 
         /// otherwise.
         /// </summary>
+        [Parameter]
         public bool Square { get; set; }
 
         /// <summary>
         /// This property contains the color for the wizard title.
         /// </summary>
+        [Parameter]
         public Color TitleColor { get; set; }
 
         /// <summary>
         /// This property contains the typography for the wizard title.
         /// </summary>
+        [Parameter]
         public Typo TitleTypo { get; set; }
 
         #endregion
