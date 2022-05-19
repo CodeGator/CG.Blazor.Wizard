@@ -58,6 +58,19 @@ references:
   isSpec: "True"
   fullName: CG.Blazor.Wizard.MuddyWizard.MuddyWizard
   nameWithType: MuddyWizard.MuddyWizard
+- uid: CG.Blazor.Wizard.MuddyWizard.ActiveChips
+  name: ActiveChips
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_ActiveChips
+  commentId: P:CG.Blazor.Wizard.MuddyWizard.ActiveChips
+  fullName: CG.Blazor.Wizard.MuddyWizard.ActiveChips
+  nameWithType: MuddyWizard.ActiveChips
+- uid: CG.Blazor.Wizard.MuddyWizard.ActiveChips*
+  name: ActiveChips
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_ActiveChips_
+  commentId: Overload:CG.Blazor.Wizard.MuddyWizard.ActiveChips
+  isSpec: "True"
+  fullName: CG.Blazor.Wizard.MuddyWizard.ActiveChips
+  nameWithType: MuddyWizard.ActiveChips
 - uid: CG.Blazor.Wizard.MuddyWizard.AddPanel(CG.Blazor.Wizard.MuddyWizardPanel)
   name: AddPanel(MuddyWizardPanel)
   href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_AddPanel_CG_Blazor_Wizard_MuddyWizardPanel_
@@ -110,6 +123,19 @@ references:
   isSpec: "True"
   fullName: CG.Blazor.Wizard.MuddyWizard.ChildContent
   nameWithType: MuddyWizard.ChildContent
+- uid: CG.Blazor.Wizard.MuddyWizard.ChipSelect(CG.Blazor.Wizard.MuddyWizardPanel)
+  name: ChipSelect(MuddyWizardPanel)
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_ChipSelect_CG_Blazor_Wizard_MuddyWizardPanel_
+  commentId: M:CG.Blazor.Wizard.MuddyWizard.ChipSelect(CG.Blazor.Wizard.MuddyWizardPanel)
+  fullName: CG.Blazor.Wizard.MuddyWizard.ChipSelect(CG.Blazor.Wizard.MuddyWizardPanel)
+  nameWithType: MuddyWizard.ChipSelect(MuddyWizardPanel)
+- uid: CG.Blazor.Wizard.MuddyWizard.ChipSelect*
+  name: ChipSelect
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_ChipSelect_
+  commentId: Overload:CG.Blazor.Wizard.MuddyWizard.ChipSelect
+  isSpec: "True"
+  fullName: CG.Blazor.Wizard.MuddyWizard.ChipSelect
+  nameWithType: MuddyWizard.ChipSelect
 - uid: CG.Blazor.Wizard.MuddyWizard.Classname
   name: Classname
   href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_Classname
@@ -123,6 +149,19 @@ references:
   isSpec: "True"
   fullName: CG.Blazor.Wizard.MuddyWizard.Classname
   nameWithType: MuddyWizard.Classname
+- uid: CG.Blazor.Wizard.MuddyWizard.Description
+  name: Description
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_Description
+  commentId: P:CG.Blazor.Wizard.MuddyWizard.Description
+  fullName: CG.Blazor.Wizard.MuddyWizard.Description
+  nameWithType: MuddyWizard.Description
+- uid: CG.Blazor.Wizard.MuddyWizard.Description*
+  name: Description
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_Description_
+  commentId: Overload:CG.Blazor.Wizard.MuddyWizard.Description
+  isSpec: "True"
+  fullName: CG.Blazor.Wizard.MuddyWizard.Description
+  nameWithType: MuddyWizard.Description
 - uid: CG.Blazor.Wizard.MuddyWizard.DescriptionColor
   name: DescriptionColor
   href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_DescriptionColor
@@ -162,6 +201,19 @@ references:
   isSpec: "True"
   fullName: CG.Blazor.Wizard.MuddyWizard.DisableNext
   nameWithType: MuddyWizard.DisableNext
+- uid: CG.Blazor.Wizard.MuddyWizard.DisablePrevious
+  name: DisablePrevious
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_DisablePrevious
+  commentId: P:CG.Blazor.Wizard.MuddyWizard.DisablePrevious
+  fullName: CG.Blazor.Wizard.MuddyWizard.DisablePrevious
+  nameWithType: MuddyWizard.DisablePrevious
+- uid: CG.Blazor.Wizard.MuddyWizard.DisablePrevious*
+  name: DisablePrevious
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_DisablePrevious_
+  commentId: Overload:CG.Blazor.Wizard.MuddyWizard.DisablePrevious
+  isSpec: "True"
+  fullName: CG.Blazor.Wizard.MuddyWizard.DisablePrevious
+  nameWithType: MuddyWizard.DisablePrevious
 - uid: CG.Blazor.Wizard.MuddyWizard.DisposeAsync
   name: DisposeAsync()
   href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_DisposeAsync
@@ -522,6 +574,19 @@ references:
   isSpec: "True"
   fullName: CG.Blazor.Wizard.MuddyWizard.ShowFinish
   nameWithType: MuddyWizard.ShowFinish
+- uid: CG.Blazor.Wizard.MuddyWizard.ShowHeaderBorder
+  name: ShowHeaderBorder
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_ShowHeaderBorder
+  commentId: P:CG.Blazor.Wizard.MuddyWizard.ShowHeaderBorder
+  fullName: CG.Blazor.Wizard.MuddyWizard.ShowHeaderBorder
+  nameWithType: MuddyWizard.ShowHeaderBorder
+- uid: CG.Blazor.Wizard.MuddyWizard.ShowHeaderBorder*
+  name: ShowHeaderBorder
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_ShowHeaderBorder_
+  commentId: Overload:CG.Blazor.Wizard.MuddyWizard.ShowHeaderBorder
+  isSpec: "True"
+  fullName: CG.Blazor.Wizard.MuddyWizard.ShowHeaderBorder
+  nameWithType: MuddyWizard.ShowHeaderBorder
 - uid: CG.Blazor.Wizard.MuddyWizard.Square
   name: Square
   href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_Square
@@ -535,6 +600,19 @@ references:
   isSpec: "True"
   fullName: CG.Blazor.Wizard.MuddyWizard.Square
   nameWithType: MuddyWizard.Square
+- uid: CG.Blazor.Wizard.MuddyWizard.Title
+  name: Title
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_Title
+  commentId: P:CG.Blazor.Wizard.MuddyWizard.Title
+  fullName: CG.Blazor.Wizard.MuddyWizard.Title
+  nameWithType: MuddyWizard.Title
+- uid: CG.Blazor.Wizard.MuddyWizard.Title*
+  name: Title
+  href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_Title_
+  commentId: Overload:CG.Blazor.Wizard.MuddyWizard.Title
+  isSpec: "True"
+  fullName: CG.Blazor.Wizard.MuddyWizard.Title
+  nameWithType: MuddyWizard.Title
 - uid: CG.Blazor.Wizard.MuddyWizard.TitleColor
   name: TitleColor
   href: api/CG.Blazor.Wizard.MuddyWizard.html#CG_Blazor_Wizard_MuddyWizard_TitleColor

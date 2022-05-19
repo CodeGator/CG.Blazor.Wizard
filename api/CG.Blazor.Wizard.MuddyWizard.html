@@ -199,6 +199,32 @@ class.</p>
   </div>
   <h3 id="properties">Properties
   </h3>
+  <a id="CG_Blazor_Wizard_MuddyWizard_ActiveChips_" data-uid="CG.Blazor.Wizard.MuddyWizard.ActiveChips*"></a>
+  <h4 id="CG_Blazor_Wizard_MuddyWizard_ActiveChips" data-uid="CG.Blazor.Wizard.MuddyWizard.ActiveChips">ActiveChips</h4>
+  <div class="markdown level1 summary"><p>Thks property indicates whether the chips should respond to user clicks,
+or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public bool ActiveChips { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Blazor_Wizard_MuddyWizard_ButtonVariant_" data-uid="CG.Blazor.Wizard.MuddyWizard.ButtonVariant*"></a>
   <h4 id="CG_Blazor_Wizard_MuddyWizard_ButtonVariant" data-uid="CG.Blazor.Wizard.MuddyWizard.ButtonVariant">ButtonVariant</h4>
   <div class="markdown level1 summary"><p>This property contains the variant for the wizard buttons.</p>
@@ -298,6 +324,31 @@ public RenderFragment ChildContent { get; set; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Blazor_Wizard_MuddyWizard_Description_" data-uid="CG.Blazor.Wizard.MuddyWizard.Description*"></a>
+  <h4 id="CG_Blazor_Wizard_MuddyWizard_Description" data-uid="CG.Blazor.Wizard.MuddyWizard.Description">Description</h4>
+  <div class="markdown level1 summary"><p>This property contains the description for the wizard.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public string Description { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Blazor_Wizard_MuddyWizard_DescriptionColor_" data-uid="CG.Blazor.Wizard.MuddyWizard.DescriptionColor*"></a>
   <h4 id="CG_Blazor_Wizard_MuddyWizard_DescriptionColor" data-uid="CG.Blazor.Wizard.MuddyWizard.DescriptionColor">DescriptionColor</h4>
   <div class="markdown level1 summary"><p>This property contains the color for the wizard descriptions.</p>
@@ -357,6 +408,31 @@ public Typo DescriptionTypo { get; set; }</code></pre>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Parameter]
 public bool DisableNext { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blazor_Wizard_MuddyWizard_DisablePrevious_" data-uid="CG.Blazor.Wizard.MuddyWizard.DisablePrevious*"></a>
+  <h4 id="CG_Blazor_Wizard_MuddyWizard_DisablePrevious" data-uid="CG.Blazor.Wizard.MuddyWizard.DisablePrevious">DisablePrevious</h4>
+  <div class="markdown level1 summary"><p>This property indicates whether the previous button should be disabled, or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public bool DisablePrevious { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -483,7 +559,8 @@ header.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Variant HeaderChipVariant { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Parameter]
+public Variant HeaderChipVariant { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -825,6 +902,31 @@ public bool ShowFinish { get; set; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Blazor_Wizard_MuddyWizard_ShowHeaderBorder_" data-uid="CG.Blazor.Wizard.MuddyWizard.ShowHeaderBorder*"></a>
+  <h4 id="CG_Blazor_Wizard_MuddyWizard_ShowHeaderBorder" data-uid="CG.Blazor.Wizard.MuddyWizard.ShowHeaderBorder">ShowHeaderBorder</h4>
+  <div class="markdown level1 summary"><p>This property indicates whether the wizard should draw a bottom border
+for the wizard header.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool ShowHeaderBorder { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Blazor_Wizard_MuddyWizard_Square_" data-uid="CG.Blazor.Wizard.MuddyWizard.Square*"></a>
   <h4 id="CG_Blazor_Wizard_MuddyWizard_Square" data-uid="CG.Blazor.Wizard.MuddyWizard.Square">Square</h4>
   <div class="markdown level1 summary"><p>This property indicates whether the border radius should be set
@@ -848,6 +950,31 @@ public bool Square { get; set; }</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="CG_Blazor_Wizard_MuddyWizard_Title_" data-uid="CG.Blazor.Wizard.MuddyWizard.Title*"></a>
+  <h4 id="CG_Blazor_Wizard_MuddyWizard_Title" data-uid="CG.Blazor.Wizard.MuddyWizard.Title">Title</h4>
+  <div class="markdown level1 summary"><p>This property contains the title for the wizard.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public string Title { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -981,6 +1108,31 @@ public EventCallback WizardFinished { get; set; }</code></pre>
       </tr>
     </tbody>
   </table>
+  <a id="CG_Blazor_Wizard_MuddyWizard_ChipSelect_" data-uid="CG.Blazor.Wizard.MuddyWizard.ChipSelect*"></a>
+  <h4 id="CG_Blazor_Wizard_MuddyWizard_ChipSelect_CG_Blazor_Wizard_MuddyWizardPanel_" data-uid="CG.Blazor.Wizard.MuddyWizard.ChipSelect(CG.Blazor.Wizard.MuddyWizardPanel)">ChipSelect(MuddyWizardPanel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ChipSelect(MuddyWizardPanel panel)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CG.Blazor.Wizard.MuddyWizardPanel.html">MuddyWizardPanel</a></td>
+        <td><span class="parametername">panel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="CG_Blazor_Wizard_MuddyWizard_DisposeAsync_" data-uid="CG.Blazor.Wizard.MuddyWizard.DisposeAsync*"></a>
   <h4 id="CG_Blazor_Wizard_MuddyWizard_DisposeAsync" data-uid="CG.Blazor.Wizard.MuddyWizard.DisposeAsync">DisposeAsync()</h4>
   <div class="markdown level1 summary"><p>This method is called to dispose of the component.</p>
@@ -988,7 +1140,7 @@ public EventCallback WizardFinished { get; set; }</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public async ValueTask DisposeAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public ValueTask DisposeAsync()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1054,7 +1206,8 @@ public EventCallback WizardFinished { get; set; }</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span></td>
-        <td></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1078,7 +1231,8 @@ public EventCallback WizardFinished { get; set; }</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span></td>
-        <td></td>
+        <td><p>A task to perform the operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
