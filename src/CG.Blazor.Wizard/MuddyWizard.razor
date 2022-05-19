@@ -1,4 +1,7 @@
 ﻿@namespace CG.Blazor.Wizard
+@using Microsoft.AspNetCore.Components
+@using MudBlazor
+
 @inherits MudComponentBase
 
 <CascadingValue Value="this" IsFixed="true">
@@ -10,7 +13,7 @@
              Square="@Square">
         @if (null != SelectedIndex)
         {
-            <MudCardHeader Style="border-bottom: 1px solid grey;">
+            <MudCardHeader Style=@(ShowHeaderBorder ? "border-bottom: 1px solid grey;" : "")>
                 @if (ShowChips)
                 {
                     <MudGrid Justify="Justify.SpaceEvenly">
@@ -29,7 +32,7 @@
                                             Text="@panel.Title"
                                             Variant="@HeaderChipVariant"
                                             Color="@HeaderChipColor"
-                                            OnClick="(() => Select(panel))" /> 
+                                            OnClick="(() => ChipSelect(panel))" /> 
                                 }
                             </MudItem> 
                         }

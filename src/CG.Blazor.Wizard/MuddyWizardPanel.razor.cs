@@ -79,7 +79,7 @@ namespace CG.Blazor.Wizard
         /// <summary>
         /// This method is called to dispose of the component.
         /// </summary>
-        /// <returns>A <see cref="ValueTask"/> for the operation.</returns>
+        /// <returns>A task to perform the operation.</returns>
         public async ValueTask DisposeAsync()
         {
             // Have we already been disposed?

@@ -108,6 +108,12 @@ namespace CG.Blazor.Wizard
         public bool DisableNext { get; set; }
 
         /// <summary>
+        /// This property indicates whether the previous button should be disabled, or not. 
+        /// </summary>
+        [Parameter]
+        public bool DisablePrevious { get; set; }
+
+        /// <summary>
         /// This property contains the elevation for the component.
         /// </summary>
         [Parameter]
@@ -137,28 +143,20 @@ namespace CG.Blazor.Wizard
         /// This property contains the variant for the chips in the wizard
         /// header.
         /// </summary>
+        [Parameter]
         public Variant HeaderChipVariant { get; set; }
 
         /// <summary>
-        /// This property indicates whether the previous button should be
-        /// disabled, or not. True if it should be disabled; False otherwise.
+        /// This property contains the title for the wizard.
         /// </summary>
-        protected bool IsPreviousDisabled =>
-            !SelectedIndex.HasValue || SelectedIndex <= 0;
+        [Parameter]
+        public string Title { get; set; }
 
         /// <summary>
-        /// This property indicates whether the next button should be
-        /// disabled, or not. True if it should be disabled; False otherwise.
+        /// This property contains the description for the wizard.
         /// </summary>
-        protected bool IsNextDisabled => DisableNext || 
-            (!SelectedIndex.HasValue || SelectedIndex >= _panels.Count - 1);
-
-        /// <summary>
-        /// This property indicates whether the finish button should be
-        /// hidden, or not. True if it should be hidden; False otherwise.
-        /// </summary>
-        protected bool IsFinishVisible => 
-            ShowFinish && (!SelectedIndex.HasValue || SelectedIndex >= _panels.Count - 1);
+        [Parameter]
+        public string Description { get; set; }
 
         /// <summary>
         /// This property contains the color for the next button.
@@ -203,6 +201,13 @@ namespace CG.Blazor.Wizard
         public bool ShowCancel { get; set; }
 
         /// <summary>
+        /// Thks property indicates whether the chips should respond to user clicks,
+        /// or not.
+        /// </summary>
+        [Parameter]
+        public bool ActiveChips { get; set; }
+
+        /// <summary>
         /// This property indicates whether to show the header chips, or not.
         /// </summary>
         [Parameter]
@@ -234,6 +239,36 @@ namespace CG.Blazor.Wizard
         [Parameter]
         public Typo TitleTypo { get; set; }
 
+        /// <summary>
+        /// This property indicates whether the previous button should be
+        /// disabled, or not. True if it should be disabled; False otherwise.
+        /// </summary>
+        protected bool IsPreviousDisabled => DisablePrevious ||
+            !SelectedIndex.HasValue || SelectedIndex <= 0;
+
+        /// <summary>
+        /// This property indicates whether the next button should be
+        /// disabled, or not. True if it should be disabled; False otherwise.
+        /// </summary>
+        protected bool IsNextDisabled => DisableNext ||
+            (!SelectedIndex.HasValue || SelectedIndex >= _panels.Count - 1);
+
+        /// <summary>
+        /// This property indicates whether the finish button should be
+        /// hidden, or not. True if it should be hidden; False otherwise.
+        /// </summary>
+        protected bool IsFinishVisible =>
+            ShowFinish && (!SelectedIndex.HasValue || SelectedIndex >= _panels.Count - 1);
+
+        /// <summary>
+        /// This property indicates whether the wizard should draw a bottom border
+        /// for the wizard header.
+        /// </summary>
+        protected bool ShowHeaderBorder => !string.IsNullOrEmpty(Title) ||
+            !string.IsNullOrEmpty(Description) ||
+            !string.IsNullOrEmpty(SelectedPanel?.Title) ||
+            !string.IsNullOrEmpty(SelectedPanel?.Description);
+
         #endregion
 
         // *******************************************************************
@@ -255,6 +290,7 @@ namespace CG.Blazor.Wizard
             DescriptionColor = Color.Default;
             DescriptionTypo = Typo.caption;
             DisableNext = false;
+            DisablePrevious = false;
             Elevation = 1;
             FinishColor = Color.Default;
             HeaderChipColor = Color.Default;
@@ -264,9 +300,12 @@ namespace CG.Blazor.Wizard
             PreviousColor = Color.Default;
             ShowCancel = true;
             ShowChips = false;
+            ActiveChips = false;
             ShowFinish = true;
             TitleColor = Color.Default;
             TitleTypo = Typo.h4;
+            Title = "";
+            Description = "";
         }
 
         #endregion
@@ -276,6 +315,21 @@ namespace CG.Blazor.Wizard
         // *******************************************************************
 
         #region Public methods
+
+        /// <inheritdoc />
+        public void ChipSelect(
+            MuddyWizardPanel panel
+            )
+        {
+            // Do we have active chips?
+            if (ActiveChips)
+            {
+                // Select the panel.
+                Select(panel);
+            }
+        }
+
+        // *******************************************************************
 
         /// <inheritdoc />
         public void Select(
@@ -322,7 +376,7 @@ namespace CG.Blazor.Wizard
             // Should we cancel the navigation?
             if (eventArgs.NewIndex == eventArgs.CurrentIndex)
             {
-                return;
+                return; // No change to the wizard.
             }
 
             // Is the index within a valid range?
@@ -340,6 +394,22 @@ namespace CG.Blazor.Wizard
                 else
                 {
                     SelectedPanel = null;
+                }
+            }
+
+            // Do we have a selected panel?
+            if (null != SelectedPanel)
+            {
+                // Should we carry the wizard title to this page?
+                if (string.IsNullOrEmpty(SelectedPanel.Title))
+                {
+                    SelectedPanel.Title = Title;
+                }
+
+                // Should we carry the wizard description to this page?
+                if (string.IsNullOrEmpty(SelectedPanel.Description))
+                {
+                    SelectedPanel.Description = Description;
                 }
             }
 
@@ -411,7 +481,7 @@ namespace CG.Blazor.Wizard
         /// <summary>
         /// This method cancels the wizard.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A task to perform the operation.</returns>
         protected async Task OnCancel()
         {
             // Raise the event.
@@ -423,7 +493,7 @@ namespace CG.Blazor.Wizard
         /// <summary>
         /// This method finishes the wizard.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A task to perform the operation.</returns>
         protected async Task OnFinish()
         {
             // Raise the event.
@@ -441,7 +511,9 @@ namespace CG.Blazor.Wizard
             if (null != chip)
             {
                 // Look for the corresponding panel.
-                var panel = _panels.FirstOrDefault(x => x.Title == chip.Text);
+                var panel = _panels.FirstOrDefault(x => 
+                    x.Title == chip.Text
+                    );
 
                 // Did we find one?
                 if (null != panel)
@@ -472,21 +544,21 @@ namespace CG.Blazor.Wizard
         /// This method is called to dispose of the component.
         /// </summary>
         /// <returns>A <see cref="ValueTask"/> for the operation.</returns>
-        public async ValueTask DisposeAsync()
+        public ValueTask DisposeAsync()
         {
             // Have we already been disposed?
             if (_disposed == true)
             {
-                return; // Nothing to do.
+                return ValueTask.CompletedTask;
             }
 
             // Mark that we've been disposed.
             _disposed = true;
 
-            // TOOD : write the code for this.
-
-            // Prevent derived types from having the implement IDisposable.
+            // Prevent derived types from having to implement IDisposable.
             GC.SuppressFinalize(this);
+
+            return ValueTask.CompletedTask;
         }
 
         #endregion

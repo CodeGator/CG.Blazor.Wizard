@@ -38,10 +38,16 @@
 		        </MudCardHeader>
                 <MudCardContent>
                     <MudGrid>
-                        <MudItem xs=12>
+                        <MudItem xs=6>
                              <MudSwitch Label="Show Header Chips" 
                                        @bind-Checked="@_wiz.ShowChips" 
                                        Color="@(_wiz.ShowChips ? Color.Primary: Color.Default)" />
+				        </MudItem>
+                        <MudItem xs="6">
+                             <MudSwitch Label="Active Chips" 
+                                       @bind-Checked="@_wiz.ActiveChips" 
+                                       Disabled="@(!_wiz.ShowChips)"
+                                       Color="@(_wiz.ActiveChips ? Color.Primary: Color.Default)" />
 				        </MudItem>
                         <MudItem xs="6">
                             <MudSelect Variant="Variant.Outlined" 
